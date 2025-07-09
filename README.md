@@ -1,16 +1,73 @@
-# scorecard_app
+# Clean Train Station Score Card App
 
-A new Flutter project.
+A Flutter application to digitize the **Score Card Form** used for evaluating the cleanliness of train coaches and stations as part of the Clean Train Station (CTS) initiative.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features Implemented
 
-A few resources to get you started if this is your first Flutter project:
+- Score Entry Grid  
+  Users can input cleanliness scores for toilets, doorways, vestibule areas, and waste disposal, coach-by-coach (C1–C13), using dropdowns.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Form Data Entry 
+  Includes:
+  - W.O. Number
+  - Date of Inspection (auto-filled)
+  - Name of Work
+  - Contractor Name
+  - Supervisor Name & Designation
+  - Arrival / Departure Times
+  - Train Number, Total Coaches, etc.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Live Totals Calculation 
+  - Calculates `Total Score` (number of “1” entries)
+  - Calculates `Inaccessible Items` (entries marked as “X”)
+
+- Review Page  
+  - All entered data is shown in a read-only summary.
+  - Data sent to a mock API endpoint upon confirmation (`https://httpbin.org/post`).
+
+- Beautiful UI  
+  - Gradient background with modern styling.
+  - Colored tables and form sections for clarity.
+  - Consistent color palette matching railway theme.
+
+- State Management with Provider  
+  - Form data is managed globally and reused across screens.
+
+
+---
+## **Folder Structure**
+  lib/
+  ├── main.dart
+  ├── provider/
+  │   └── form_data_provider.dart
+  ├── screens/
+  │   └── home/
+  │       ├── home_screen.dart
+  │       ├── score_card_form.dart
+  │       └── review_page.dart
+  ├── utils/
+  │   └── form_config.dart
+  assets/
+  └── images/
+
+---
+## **API Submission**
+  POST https://httpbin.org/post
+  Content-Type: application/json
+---
+
+## License
+This project is for educational/demo purposes only. No license applies.
+
+---
+
+##  Project Setup Instructions
+
+1. **Clone this repo**
+```bash
+git clone https://github.com/your-username/cts_scorecard_app.git
+cd cts_scorecard_app
+
+
